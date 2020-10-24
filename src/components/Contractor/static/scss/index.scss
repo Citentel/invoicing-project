@@ -1,0 +1,74 @@
+@import "../../../../static/scss/config";
+
+.contractor {
+  &__headline {
+    color: $color__900;
+
+    &--1 {
+      @include rem(font-size, $base__font__size*1.5);
+      @include rem(line-height, $base__line__height*1.5);
+      @include rem(margin, 20, 0);
+
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    &__box {
+      @include rem(margin-bottom, 20);
+
+      &--row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &--zipcode,
+      &--city {
+        @include rem(max-width, 375px);
+        width: 100%;
+      }
+
+      &--zipcode {
+        @include rem(margin-right, 15);
+      }
+
+      &--city {
+        @include rem(margin-left, 15);
+      }
+
+      .label {
+        display: block;
+        @include rem(margin-bottom, 5);
+      }
+
+      .input {
+        display: block;
+        width: 100%;
+        font-size: inherit;
+        line-height: inherit;
+        @include rem(padding, 15, 10);
+        @include rem(border-radius, 5);
+        outline: none;
+        @include rem(border-width, 2);
+        border-style: solid;
+        border-color: $color__100;
+        transition: $base__transition;
+
+        &:active,
+        &:focus {
+          border-color: $color__700;
+        }
+
+        &--invalid {
+          border-color: crimson;
+        }
+
+        &--valid {
+          border-color: green;
+        }
+      }
+    }
+  }
+}

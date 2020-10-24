@@ -5,7 +5,7 @@
   justify-content: center;
 
   .container {
-    @include rem(max-width, 900);
+    @include rem(max-width, 700);
     width: 100%;
 
     &__headline {
