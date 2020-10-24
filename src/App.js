@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './static/scss/app.css';
 import Contractor from "./components/Contractor";
 
-export default function App() {
-    return (
+class App extends Component {
+    render = () => (
         <div className="app">
             <div className="container">
                 <h1 className="container__headline container__headline--1">
@@ -14,3 +14,5 @@ export default function App() {
         </div>
     );
 }
+
+export default App;
