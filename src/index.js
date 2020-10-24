@@ -5,6 +5,6 @@ import './static/normalize.css';
 import './static/scss/index.css';
 
 ReactDOM.render(
-    <App />,
-  document.getElementById('root')
+    <App/>,
+    document.getElementById('root')
 );

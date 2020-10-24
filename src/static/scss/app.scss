@@ -1,0 +1,21 @@
+@import "config";
+
+.app {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    @include rem(max-width, 900);
+    width: 100%;
+
+    &__headline {
+      color: $color__900;
+
+      &--1 {
+        @include rem(font-size, $base__font__size*2);
+        @include rem(line-height, $base__line__height*2);
+        @include rem(margin, 30, 0);
+      }
+    }
+  }
+}
