@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './static/scss/app.css';
-import Contractor from "./components/Contractor";
+import AddContractor from "./components/AddContractor";
 
 class App extends Component {
     render = () => (
@@ -9,7 +9,7 @@ class App extends Component {
                 <h1 className="container__headline container__headline--1">
                     Wystaw dokument
                 </h1>
-                <Contractor/>
+                <AddContractor/>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Swal from 'sweetalert2'
 import './static/scss/index.css';
 
-class Contractor extends Component {
+class AddContractor extends Component {
 
     state = {
         form: {
@@ -205,4 +205,4 @@ class Contractor extends Component {
     }
 }
 
-export default Contractor;
+export default AddContractor;
