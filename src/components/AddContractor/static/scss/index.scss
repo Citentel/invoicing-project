@@ -77,6 +77,10 @@
         &--submit {
           cursor: pointer;
 
+          &:first-child {
+            @include rem(margin-bottom, 15);
+          }
+
           &:hover {
             border-color: $color__700;
             background-color: $color__300;

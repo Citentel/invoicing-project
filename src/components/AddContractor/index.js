@@ -143,6 +143,24 @@ class AddContractor extends Component {
         }
     }
 
+    forceRedirect = () => {
+        Swal.fire({
+            title: 'Czy napewno chcesz wyjść?',
+            icon: 'info',
+            text: 'Po wyjściu dane nie zostaną zapisane',
+            showCancelButton: true,
+            cancelButtonColor: '#f44336',
+            confirmButtonColor: '#4caf50',
+            cancelButtonText: 'Zostaję',
+            confirmButtonText: 'Wychodzę',
+            allowOutsideClick: false,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.setState({wasConfirm: true});
+            }
+        });
+    }
+
     render = () => {
         if (this.state.redirect === true) {
             this.createRedirect();
@@ -195,6 +213,8 @@ class AddContractor extends Component {
                     <div className="form__box form__box--submit">
                         <input className="input input--submit" type="submit" value="Dodaj kontrahenta"
                                onClick={this.isValid}/>
+                        <input className="input input--submit" type="submit" value="Powrót do strony głównej"
+                               onClick={this.forceRedirect}/>
                     </div>
                 </div>
             </div>
