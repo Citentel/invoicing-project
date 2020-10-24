@@ -154,8 +154,8 @@ class AddContractor extends Component {
             );
         }
         return (
-            <div className="contractor">
-                <h2 className="contractor__headline contractor__headline--2">Dane kontrahenta</h2>
+            <div className="addcontractor">
+                <h2 className="addcontractor__headline addcontractor__headline--2">Dane kontrahenta</h2>
                 <div className="form">
                     <div className="form__box form__box--nip">
                         <label className="label label--nip" htmlFor="nip">NIP:*</label>

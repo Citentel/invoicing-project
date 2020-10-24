@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './static/scss/app.css';
 import AddContractor from "./components/AddContractor";
+import Contractor from "./components/Contractor";
 
 class App extends Component {
     render = () => {
@@ -15,7 +16,7 @@ class App extends Component {
                                     <h1 className="container__headline container__headline--1">
                                         Wystaw dokument
                                     </h1>
-                                    Start Page
+                                    <Contractor/>
                                 </div>
                             </Route>
                             <Route exact path="/dodaj_kontrahenta">
