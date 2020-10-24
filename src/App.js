@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './static/scss/app.css';
-import AddContractor from "./components/AddContractor";
 import Select from "./components/Select";
-import AddTrader from "./components/AddTrader";
+import AddSelect from "./components/AddSelect";
 
 class App extends Component {
     render = () => {
@@ -25,13 +24,13 @@ class App extends Component {
                                 <h1 className="container__headline container__headline--1">
                                     Dodaj kontrahenta
                                 </h1>
-                                <AddContractor/>
+                                <AddSelect type="contractor"/>
                             </Route>
                             <Route exact path="/dodaj_sprzedawce">
                                 <h1 className="container__headline container__headline--1">
                                     Dodaj sprzedawce
                                 </h1>
-                                <AddTrader/>
+                                <AddSelect type="trader"/>
                             </Route>
                         </Switch>
                     </Router>

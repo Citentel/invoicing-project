@@ -3,9 +3,25 @@ import {Redirect} from "react-router-dom";
 import Swal from 'sweetalert2'
 import './static/scss/index.css';
 
-class AddTrader extends Component {
+class AddSelect extends Component {
+
+    texts = {
+        trader: {
+            localStorage: 'traders',
+            invalidNip: 'Sprzedawca',
+            headline: 'sprzedawcy',
+            submit: 'sprzedawce',
+        },
+        contractor: {
+            localStorage: 'contractors',
+            invalidNip: 'Kontarhent',
+            headline: 'kontrahenta',
+            submit: 'kontrahenta',
+        }
+    }
 
     state = {
+        type: this.texts[this.props.type],
         form: {
             nip: null,
             name: null,
@@ -37,6 +53,7 @@ class AddTrader extends Component {
             input.classList.add('input--invalid');
 
             if (this.state.form[inputName] !== false) {
+                // eslint-disable-next-line
                 this.state.form[inputName] = false;
                 this.reloadState();
             }
@@ -48,6 +65,7 @@ class AddTrader extends Component {
                 infoElement.classList.remove('info--error');
             }
             if (this.state.form[inputName] !== true) {
+                // eslint-disable-next-line
                 this.state.form[inputName] = true;
                 this.reloadState();
             }
@@ -68,11 +86,11 @@ class AddTrader extends Component {
 
         if (counter === 0) {
             this.setState({isValid: true});
-            this.setTrader();
+            this.setData();
         }
     }
 
-    setTrader = () => {
+    setData = () => {
         const getValuesFromForm = () => {
             const formValues = {};
 
@@ -85,22 +103,22 @@ class AddTrader extends Component {
         }
 
         const formValues = getValuesFromForm();
-        let traders = {}
+        let data = {}
 
-        if (localStorage.getItem('traders') === null) {
-            traders[formValues.nip] = formValues;
-            localStorage.setItem('traders', JSON.stringify(traders));
+        if (localStorage.getItem(this.state.type.localStorage) === null) {
+            data[formValues.nip] = formValues;
+            localStorage.setItem(this.state.type.localStorage, JSON.stringify(data));
             this.setState({redirect: true});
         } else {
-            traders = JSON.parse(localStorage.getItem('traders'));
-            if (traders[formValues.nip] === undefined || traders[formValues.nip] === null) {
-                traders[formValues.nip] = formValues;
-                localStorage.setItem('traders', JSON.stringify(traders));
+            data = JSON.parse(localStorage.getItem(this.state.type.localStorage));
+            if (data[formValues.nip] === undefined || data[formValues.nip] === null) {
+                data[formValues.nip] = formValues;
+                localStorage.setItem(this.state.type.localStorage, JSON.stringify(data));
                 this.setState({redirect: true});
             } else {
                 Swal.fire({
                     title: 'Niepoprawny NIP',
-                    html: `Sprzedawca o numerze NIP <b>${formValues.nip}</b> już istnieje. Proszę podaj inny numer NIP, lub wróć do strony głównej`,
+                    html: `${this.state.type.invalidNip} o numerze NIP <b>${formValues.nip}</b> już istnieje. Proszę podaj inny numer NIP, lub wróć do strony głównej.`,
                     icon: 'error',
                     showCancelButton: true,
                     cancelButtonColor: '#f44336',
@@ -130,13 +148,14 @@ class AddTrader extends Component {
         if (this.state.isValid === true) {
             this.setState({wasConfirm: false});
             Swal.fire({
-                title: 'Sprzedawca dodany poprawnie',
+                title: `${this.state.type.invalidNip} dodany poprawnie.`,
                 icon: 'success',
                 confirmButtonColor: '#4caf50',
                 confirmButtonText: 'Ok',
                 allowOutsideClick: false,
             }).then((result) => {
                 if (result.isConfirmed) {
+                    // eslint-disable-next-line
                     this.setState({wasConfirm: true});
                 }
             });
@@ -156,6 +175,7 @@ class AddTrader extends Component {
             allowOutsideClick: false,
         }).then((result) => {
             if (result.isConfirmed) {
+                // eslint-disable-next-line
                 this.setState({wasConfirm: true});
             }
         });
@@ -172,8 +192,8 @@ class AddTrader extends Component {
             );
         }
         return (
-            <div className="addtrader">
-                <h2 className="addtrader__headline addtrader__headline--2">Dane sprzedawcy</h2>
+            <div className="addselect">
+                <h2 className="addselect__headline addselect__headline--2">{`Dane ${this.state.type.headline}`}</h2>
                 <div className="form">
                     <div className="form__box form__box--nip">
                         <label className="label label--nip" htmlFor="nip">NIP:*</label>
@@ -211,7 +231,7 @@ class AddTrader extends Component {
                         <p className="info info--country">Pole nie może być puste</p>
                     </div>
                     <div className="form__box form__box--submit">
-                        <input className="input input--submit" type="submit" value="Dodaj sprzedawce"
+                        <input className="input input--submit" type="submit" value={`Dodaj ${this.state.type.submit}`}
                                onClick={this.isValid}/>
                         <input className="input input--submit" type="submit" value="Powrót do strony głównej"
                                onClick={this.forceRedirect}/>
@@ -222,4 +242,4 @@ class AddTrader extends Component {
     }
 }
 
-export default AddTrader;
+export default AddSelect;
