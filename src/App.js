@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './static/scss/app.css';
 import AddContractor from "./components/AddContractor";
-import Contractor from "./components/Contractor";
-import Trader from "./components/Trader";
+import Select from "./components/Select";
 import AddTrader from "./components/AddTrader";
 
 class App extends Component {
@@ -18,8 +17,8 @@ class App extends Component {
                                     <h1 className="container__headline container__headline--1">
                                         Wystaw dokument
                                     </h1>
-                                    <Contractor/>
-                                    <Trader/>
+                                    <Select type="contractor"/>
+                                    <Select type="trader"/>
                                 </div>
                             </Route>
                             <Route exact path="/dodaj_kontrahenta">

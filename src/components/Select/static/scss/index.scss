@@ -1,13 +1,15 @@
 @import "../../../../static/scss/config";
 
-.trader {
-  @include rem(border-width, 4);
-  border-style: solid;
-  border-color: $color__200;
-  border-left: none;
-  border-top: none;
-  border-right: none;
-  @include rem(padding-bottom, 30);
+.select {
+  &__container {
+    @include rem(border-width, 4);
+    border-style: solid;
+    border-color: $color__200;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    @include rem(padding-bottom, 30);
+  }
 
   &__headline {
     color: $color__900;
@@ -44,7 +46,7 @@
     }
   }
 
-  .select {
+  .select__form {
     @include rem(margin, 20, 0);
     .label {
       display: block;
