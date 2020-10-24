@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from "react-router-dom";
 import Swal from 'sweetalert2'
 import './static/scss/index.css';
 
@@ -36,7 +37,6 @@ class AddContractor extends Component {
             input.classList.add('input--invalid');
 
             if (this.state.form[inputName] !== false) {
-                // eslint-disable-next-line
                 this.state.form[inputName] = false;
                 this.reloadState();
             }
@@ -48,7 +48,6 @@ class AddContractor extends Component {
                 infoElement.classList.remove('info--error');
             }
             if (this.state.form[inputName] !== true) {
-                // eslint-disable-next-line
                 this.state.form[inputName] = true;
                 this.reloadState();
             }
@@ -114,7 +113,6 @@ class AddContractor extends Component {
                         const input = document.querySelector('.input--nip');
                         input.value = '';
                     } else if (result.isDismissed) {
-                        // eslint-disable-next-line
                         this.setState({isValid: false});
                         this.setState({redirect: true});
                         this.setState({wasConfirm: true});
@@ -130,7 +128,6 @@ class AddContractor extends Component {
             input.value = '';
         }
         if (this.state.isValid === true) {
-            // eslint-disable-next-line
             this.setState({wasConfirm: false});
             Swal.fire({
                 title: 'Kontrahent dodany poprawnie',
@@ -140,7 +137,6 @@ class AddContractor extends Component {
                 allowOutsideClick: false,
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // eslint-disable-next-line
                     this.setState({wasConfirm: true});
                 }
             });
@@ -150,15 +146,16 @@ class AddContractor extends Component {
     render = () => {
         if (this.state.redirect === true) {
             this.createRedirect();
-            // eslint-disable-next-line
             this.setState({redirect: false});
         }
         if (this.state.wasConfirm === true) {
-            console.log('redirect to home');
+            return (
+                <Redirect to="/"/>
+            );
         }
         return (
             <div className="contractor">
-                <h2 className="contractor__headline contractor__headline--2">Kontrahent</h2>
+                <h2 className="contractor__headline contractor__headline--2">Dane kontrahenta</h2>
                 <div className="form">
                     <div className="form__box form__box--nip">
                         <label className="label label--nip" htmlFor="nip">NIP:*</label>
