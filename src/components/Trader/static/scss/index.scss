@@ -1,0 +1,54 @@
+@import "../../../../static/scss/config";
+
+.trader {
+  @include rem(border-width, 4);
+  border-style: solid;
+  border-color: $color__200;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  @include rem(padding-bottom, 30);
+
+  &__headline {
+    color: $color__900;
+
+    &--2 {
+      @include rem(font-size, $base__font__size*1.5);
+      @include rem(line-height, $base__line__height*1.5);
+      @include rem(margin, 20, 0);
+
+    }
+  }
+
+  .input {
+    display: block;
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+    @include rem(padding, 15, 10);
+    @include rem(border-radius, 5);
+    outline: none;
+    @include rem(border-width, 2);
+    border-style: solid;
+    border-color: $color__100;
+    transition: $base__transition;
+    &--select {
+      background-color: $color__white;
+    }
+    &--submit {
+      cursor: pointer;
+      &:hover {
+        border-color: $color__700;
+        background-color: $color__300;
+      }
+    }
+  }
+
+  .select {
+    @include rem(margin, 20, 0);
+    .label {
+      display: block;
+      @include rem(margin-bottom, 5);
+    }
+  }
+}

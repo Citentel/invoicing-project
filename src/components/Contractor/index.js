@@ -30,11 +30,11 @@ class Contractor extends Component {
         let dataPdf = {};
 
         if (sessionStorage.getItem('dataPDF') === null) {
-            dataPdf.contractor = nip;
+            dataPdf.contractor = this.state.contractors[nip];
             sessionStorage.setItem('dataPDF', JSON.stringify(dataPdf));
         } else {
             dataPdf = JSON.parse(sessionStorage.getItem('dataPDF'));
-            dataPdf.contractor = nip;
+            dataPdf.contractor = this.state.contractors[nip];
             sessionStorage.setItem('dataPDF', JSON.stringify(dataPdf));
         }
     }

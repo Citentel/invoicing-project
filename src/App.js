@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './static/scss/app.css';
 import AddContractor from "./components/AddContractor";
 import Contractor from "./components/Contractor";
+import Trader from "./components/Trader";
+import AddTrader from "./components/AddTrader";
 
 class App extends Component {
     render = () => {
@@ -17,6 +19,7 @@ class App extends Component {
                                         Wystaw dokument
                                     </h1>
                                     <Contractor/>
+                                    <Trader/>
                                 </div>
                             </Route>
                             <Route exact path="/dodaj_kontrahenta">
@@ -24,6 +27,12 @@ class App extends Component {
                                     Dodaj kontrahenta
                                 </h1>
                                 <AddContractor/>
+                            </Route>
+                            <Route exact path="/dodaj_sprzedawce">
+                                <h1 className="container__headline container__headline--1">
+                                    Dodaj sprzedawce
+                                </h1>
+                                <AddTrader/>
                             </Route>
                         </Switch>
                     </Router>
