@@ -1,0 +1,15 @@
+@import "config";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include rem(margin, 0);
+  @include rem(padding, 0);
+  font-family: 'Raleway', sans-serif;
+  color: $color__dark;
+  font-weight: 400;
+  @include rem(font-size, $base__font__size);
+  @include rem(line-height, $base__line__height);
+}
