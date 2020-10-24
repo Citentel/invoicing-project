@@ -7,6 +7,9 @@
   .container {
     @include rem(max-width, 700);
     width: 100%;
+    @include rem(padding, 0, 20);
+    background-color: #fbfbfb;
+    height: 100vh;
 
     &__headline {
       color: $color__900;

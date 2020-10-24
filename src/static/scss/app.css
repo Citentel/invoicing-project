@@ -1,1 +1,1 @@
-.app{display:flex;justify-content:center}.app .container{max-width:43.75rem;width:100%}.app .container__headline{color:#263238}.app .container__headline--1{font-size:2.25rem;line-height:3.375rem;margin:1.875rem 0}
+.app{display:flex;justify-content:center}.app .container{max-width:43.75rem;width:100%;padding:0 1.25rem;background-color:#fbfbfb;height:100vh}.app .container__headline{color:#263238}.app .container__headline--1{font-size:2.25rem;line-height:3.375rem;margin:1.875rem 0}
