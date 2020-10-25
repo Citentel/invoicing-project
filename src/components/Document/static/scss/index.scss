@@ -1,0 +1,171 @@
+@import "../../../../static/scss/config";
+
+.app {
+  .container {
+    background-color: $color__white;
+    @include rem(max-width, 800);
+  }
+}
+
+.document {
+  @include rem(padding, 30, 0);
+
+  .header {
+    @include rem(padding-bottom, 15);
+    @include rem(margin-bottom, 30);
+    @include rem(border-bottom-width, 1);
+    border-bottom-style: solid;
+    border-bottom-color: $color__200;
+
+    &--paragraf {
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+
+  .partners {
+    display: flex;
+    justify-content: space-between;
+    @include rem(padding-bottom, 15);
+    @include rem(margin-bottom, 30);
+    @include rem(border-bottom-width, 1);
+    border-bottom-style: solid;
+    border-bottom-color: $color__200;
+
+    &__box {
+      @include rem(max-width, 275);
+      width: 100%;
+
+      &--paragraf {
+        margin: 0;
+        @include rem(font-size, 16);
+      }
+
+      &--title {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .info {
+    @extend .partners;
+
+    &__box {
+      @include rem(max-width, 275);
+      width: 100%;
+
+      &--paragraf {
+        margin: 0;
+        @include rem(font-size, 16);
+      }
+
+      &--title {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .product {
+    @include rem(padding-bottom, 30);
+    @include rem(margin-bottom, 15);
+    @include rem(border-bottom-width, 1);
+    border-bottom-style: solid;
+    border-bottom-color: $color__200;
+
+    .list {
+      &__row {
+        display: flex;
+        justify-content: space-between;
+
+        &--title {
+          @include rem(border-top-width, 1);
+          border-top-style: solid;
+          border-top-color: $color__200;
+          @include rem(border-top-left-radius, 5);
+          @include rem(border-top-right-radius, 5);
+
+          .list__col {
+            &:first-child {
+              @include rem(border-top-left-radius, 5);
+            }
+
+            &:last-child {
+              @include rem(border-top-right-radius, 5);
+            }
+          }
+        }
+
+        &--item {
+          .list__col--button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $color__red;
+            color: $color__white;
+            @include rem(font-size, 22);
+          }
+
+          &:last-child {
+            .list__col {
+              &:first-child {
+                @include rem(border-bottom-left-radius, 5);
+              }
+
+              &:last-child {
+                @include rem(border-bottom-right-radius, 5);
+              }
+            }
+          }
+        }
+      }
+
+      &__col {
+        @include rem(padding, 5);
+        @include rem(border-left-width, 1);
+        border-left-style: solid;
+        border-left-color: $color__200;
+        @include rem(border-bottom-width, 1);
+        border-bottom-style: solid;
+        border-bottom-color: $color__200;
+
+        &:last-child {
+          @include rem(border-right-width, 1);
+          border-right-style: solid;
+          border-right-color: $color__200;
+        }
+
+        &--name {
+          @include rem(max-width, 300);
+          width: 100%;
+        }
+
+        &--count {
+          @include rem(max-width, 100);
+          width: 100%;
+        }
+
+        &--vat {
+          @include rem(max-width, 60);
+          width: 100%;
+        }
+
+        &--netto {
+          @include rem(max-width, 150);
+          width: 100%;
+        }
+
+        &--brutto {
+          @include rem(max-width, 150);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .footer {
+    &--paragraf {
+      margin: 0;
+      @include rem(font-size, 16);
+    }
+  }
+}

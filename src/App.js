@@ -6,6 +6,7 @@ import AddSelect from "./components/AddSelect";
 import Products from "./components/Products";
 import Info from "./components/Info";
 import Checker from "./components/Checker";
+import Document from "./components/Document";
 
 class App extends Component {
     render = () => {
@@ -37,6 +38,9 @@ class App extends Component {
                                     Dodaj sprzedawce
                                 </h1>
                                 <AddSelect type="trader"/>
+                            </Route>
+                            <Route exact path="/wystaw_dokument">
+                                <Document/>
                             </Route>
                         </Switch>
                     </Router>
