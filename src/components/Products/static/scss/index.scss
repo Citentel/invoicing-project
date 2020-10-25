@@ -122,7 +122,16 @@
         @include rem(border-top-width, 1);
         border-top-style: solid;
         border-top-color: $color__200;
-
+        @include rem(border-top-left-radius, 5);
+        @include rem(border-top-right-radius, 5);
+        .list__col {
+          &:first-child {
+            @include rem(border-top-left-radius, 5);
+          }
+          &:last-child {
+            @include rem(border-top-right-radius, 5);
+          }
+        }
       }
 
       &--item {
@@ -133,6 +142,16 @@
           background-color: $color__red;
           color: $color__white;
           @include rem(font-size, 22);
+        }
+        &:last-child {
+          .list__col {
+            &:first-child {
+              @include rem(border-bottom-left-radius, 5);
+            }
+            &:last-child {
+              @include rem(border-bottom-right-radius, 5);
+            }
+          }
         }
       }
     }

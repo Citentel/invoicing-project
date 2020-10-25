@@ -108,6 +108,8 @@ class Products extends Component {
 
             if (key === 'count') {
                 input.value = 1;
+            } else if (key === 'netto') {
+                input.value = 0;
             } else if (key !== 'vat') {
                 input.value = '';
             }
@@ -193,7 +195,7 @@ class Products extends Component {
                     <div className="form__box--row">
                         <div className="form__box form__box--netto">
                             <label className="label label--netto" htmlFor="nip">Kwota netto:*</label>
-                            <input name="netto" className="input input--netto" type="number" min="0"
+                            <input name="netto" className="input input--netto" type="number" min="0" defaultValue="0"
                                    onChange={this.handleChange}/>
                             <p className="info info--netto">Pole nie może być puste</p>
                         </div>
