@@ -127,6 +127,7 @@
           background-color: $color__red;
           color: $color__white;
           @include rem(font-size, 22);
+          cursor: pointer;
         }
 
         &:last-child {
@@ -159,7 +160,7 @@
       }
 
       &--name {
-        @include rem(max-width, 200);
+        @include rem(max-width, 300);
         width: 100%;
       }
 
