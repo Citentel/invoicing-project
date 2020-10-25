@@ -9,6 +9,13 @@ import Checker from "./components/Checker";
 import Document from "./components/Document";
 
 class App extends Component {
+
+    restart = () => {
+        localStorage.clear();
+        sessionStorage.clear();
+        this.setState(this.state);
+    }
+
     render = () => {
         return (
             <div className="app">
@@ -17,6 +24,7 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/" >
                                 <div>
+                                    <p className="container__restart" onClick={this.restart}>Restart App</p>
                                     <h1 className="container__headline container__headline--1">
                                         Wystaw dokument
                                     </h1>

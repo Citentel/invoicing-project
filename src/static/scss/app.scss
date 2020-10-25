@@ -19,5 +19,13 @@
         @include rem(margin, 30, 0);
       }
     }
+
+    &__restart {
+      text-align: right;
+      color: $color__red;
+      @include rem(font-size, 12);
+      font-weight: 700;
+      cursor: pointer;
+    }
   }
 }
