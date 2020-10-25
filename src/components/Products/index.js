@@ -198,12 +198,12 @@ class Products extends Component {
                     </div>
                     <div className="form__box form__box--vat">
                         <label className="label label--vat" htmlFor="vat">Stawka VAT:*</label>
-                        <select className="input input--vat" name="vat" id="vat" onChange={this.handleChange}>
-                            <option value="23">23%</option>
-                            <option value="19">19%</option>
-                            <option value="10">10%</option>
-                            <option value="5">5%</option>
-                            <option value="0">0%</option>
+                        <select className="input input--vat" name="vat" id="vat" onChange={this.handleChange} defaultValue="23">
+                            <option defaultValue="23">23%</option>
+                            <option defaultValue="19">19%</option>
+                            <option defaultValue="10">10%</option>
+                            <option defaultValue="5">5%</option>
+                            <option defaultValue="0">0%</option>
                         </select>
                     </div>
                     <div className="form__box form__box--brutto">
