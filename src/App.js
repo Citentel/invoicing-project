@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './static/scss/app.css';
 import Select from "./components/Select";
 import AddSelect from "./components/AddSelect";
+import Products from "./components/Products";
 
 class App extends Component {
     render = () => {
@@ -18,6 +19,7 @@ class App extends Component {
                                     </h1>
                                     <Select type="contractor"/>
                                     <Select type="trader"/>
+                                    <Products/>
                                 </div>
                             </Route>
                             <Route exact path="/dodaj_kontrahenta">

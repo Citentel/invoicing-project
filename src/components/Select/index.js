@@ -9,7 +9,7 @@ class Select extends Component {
 
         this.state = {
             type: this.texts[this.props.type],
-            data: this.getTraders(),
+            data: this.getData(),
             redirect: false
         }
     }
@@ -31,7 +31,7 @@ class Select extends Component {
         }
     }
 
-    getTraders = () => {
+    getData = () => {
         return JSON.parse(localStorage.getItem(`${this.props.type}s`));
     }
 
