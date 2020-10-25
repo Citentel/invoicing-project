@@ -5,6 +5,7 @@ import Select from "./components/Select";
 import AddSelect from "./components/AddSelect";
 import Products from "./components/Products";
 import Info from "./components/Info";
+import Checker from "./components/Checker";
 
 class App extends Component {
     render = () => {
@@ -22,6 +23,7 @@ class App extends Component {
                                     <Select type="trader"/>
                                     <Products/>
                                     <Info/>
+                                    <Checker/>
                                 </div>
                             </Route>
                             <Route exact path="/dodaj_kontrahenta">

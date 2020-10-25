@@ -1,0 +1,33 @@
+@import "../../../../static/scss/config";
+
+.checker {
+  @include rem(padding, 30, 0);
+
+  .input {
+    display: block;
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+    @include rem(padding, 15, 10);
+    @include rem(border-radius, 5);
+    outline: none;
+    @include rem(border-width, 2);
+    border-style: solid;
+    border-color: $color__100;
+    transition: $base__transition;
+
+    &:active,
+    &:focus {
+      border-color: $color__700;
+    }
+
+    &--submit {
+      cursor: pointer;
+
+      &:hover {
+        border-color: $color__700;
+        background-color: $color__300;
+      }
+    }
+  }
+}
