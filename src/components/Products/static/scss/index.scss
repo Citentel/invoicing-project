@@ -112,4 +112,73 @@
       }
     }
   }
+
+  .list {
+    &__row {
+      display: flex;
+      justify-content: space-between;
+
+      &--title {
+        @include rem(border-top-width, 1);
+        border-top-style: solid;
+        border-top-color: $color__200;
+
+      }
+
+      &--item {
+        .list__col--button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $color__red;
+          color: $color__white;
+          @include rem(font-size, 22);
+        }
+      }
+    }
+
+    &__col {
+      @include rem(padding, 5);
+      @include rem(border-left-width, 1);
+      border-left-style: solid;
+      border-left-color: $color__200;
+      @include rem(border-bottom-width, 1);
+      border-bottom-style: solid;
+      border-bottom-color: $color__200;
+      &:last-child {
+        @include rem(border-right-width, 1);
+        border-right-style: solid;
+        border-right-color: $color__200;
+      }
+
+      &--name {
+        @include rem(max-width, 200);
+        width: 100%;
+      }
+
+      &--count {
+        @include rem(max-width, 100);
+        width: 100%;
+      }
+
+      &--vat {
+        @include rem(max-width, 60);
+        width: 100%;
+      }
+
+      &--netto {
+        @include rem(max-width, 125);
+        width: 100%;
+      }
+
+      &--brutto {
+        @include rem(max-width, 125);
+        width: 100%;
+      }
+      &--button {
+        @include rem(max-width, 50);
+        width: 100%;
+      }
+    }
+  }
 }

@@ -105,10 +105,12 @@ class Products extends Component {
 
         for (const key in this.state.form) {
             const input = document.querySelector(`.input--${key}`);
-            if (key !== 'vat') {
+
+            if (key === 'count') {
+                input.value = 1;
+            } else if (key !== 'vat') {
                 input.value = '';
             }
-
         }
         this.setState({products: data});
     }
@@ -140,8 +142,16 @@ class Products extends Component {
         let products = [];
 
         for (const key in data) {
-            products.push(<li key={key}>Nazwa: {data[key].name}, ilość: {data[key].count}, VAT: {data[key].vat},
-                netto: {data[key].netto}, brutto: {data[key].brutto}, <button name={key} onClick={this.handleDelete}>&#8855;</button></li>);
+            products.push(
+                <div key={key} className="list__row list__row--item">
+                    <div className="list__col list__col--name">{data[key].name}</div>
+                    <div className="list__col list__col--count">{data[key].count}</div>
+                    <div className="list__col list__col--vat">{data[key].vat}</div>
+                    <div className="list__col list__col--netto">{data[key].netto}</div>
+                    <div className="list__col list__col--brutto">{data[key].brutto}</div>
+                    <div className="list__col list__col--button" name={key} onClick={this.handleDelete}>&#8855;</div>
+                </div>
+            );
         }
 
         return products;
@@ -210,9 +220,17 @@ class Products extends Component {
                     </div>
                 </div>
                 <h2 className="products__headline products__headline--2">Lista produktów</h2>
-                <ol className="products__list">
+                <div className="list">
+                    <div className="list__row list__row--title">
+                        <div className="list__col list__col--name">Nazwa produktu</div>
+                        <div className="list__col list__col--count">Ilość</div>
+                        <div className="list__col list__col--vat">VAT</div>
+                        <div className="list__col list__col--netto">Netto</div>
+                        <div className="list__col list__col--brutto">Brutto</div>
+                        <div className="list__col list__col--button">&nbsp;</div>
+                    </div>
                     {products}
-                </ol>
+                </div>
             </div>
         );
     }
