@@ -45,15 +45,15 @@ class Select extends Component {
     }
 
     setDataPdf = (nip) => {
-        let dataPdf = {};
+        let dataPdf;
 
-        if (sessionStorage.getItem('dataPDF') === null) {
-            dataPdf[this.state.type.className] = this.state.data[nip];
-            sessionStorage.setItem('dataPDF', JSON.stringify(dataPdf));
+        if (sessionStorage.getItem(this.state.type.className) === null) {
+            dataPdf = this.state.data[nip];
+            sessionStorage.setItem(this.state.type.className, JSON.stringify(dataPdf));
         } else {
-            dataPdf = JSON.parse(sessionStorage.getItem('dataPDF'));
-            dataPdf[this.state.type.className] = this.state.data[nip];
-            sessionStorage.setItem('dataPDF', JSON.stringify(dataPdf));
+            dataPdf = JSON.parse(sessionStorage.getItem(this.state.type.className));
+            dataPdf = this.state.data[nip];
+            sessionStorage.setItem(this.state.type.className, JSON.stringify(dataPdf));
         }
     }
 
