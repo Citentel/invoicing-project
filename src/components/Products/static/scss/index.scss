@@ -33,23 +33,6 @@
         margin: 0;
       }
 
-      &--row {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      &--name {
-        @include rem(max-width, 560);
-        width: 100%;
-        @include rem(margin-right, 10);
-      }
-
-      &--count {
-        @include rem(max-width, 80);
-        width: 100%;
-        @include rem(margin-left, 10);
-      }
-
       .label {
         display: block;
         @include rem(margin-bottom, 5);
@@ -124,10 +107,12 @@
         border-top-color: $color__200;
         @include rem(border-top-left-radius, 5);
         @include rem(border-top-right-radius, 5);
+
         .list__col {
           &:first-child {
             @include rem(border-top-left-radius, 5);
           }
+
           &:last-child {
             @include rem(border-top-right-radius, 5);
           }
@@ -143,11 +128,13 @@
           color: $color__white;
           @include rem(font-size, 22);
         }
+
         &:last-child {
           .list__col {
             &:first-child {
               @include rem(border-bottom-left-radius, 5);
             }
+
             &:last-child {
               @include rem(border-bottom-right-radius, 5);
             }
@@ -164,6 +151,7 @@
       @include rem(border-bottom-width, 1);
       border-bottom-style: solid;
       border-bottom-color: $color__200;
+
       &:last-child {
         @include rem(border-right-width, 1);
         border-right-style: solid;
@@ -194,6 +182,7 @@
         @include rem(max-width, 125);
         width: 100%;
       }
+
       &--button {
         @include rem(max-width, 50);
         width: 100%;

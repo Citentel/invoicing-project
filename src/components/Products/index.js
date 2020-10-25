@@ -94,13 +94,13 @@ class Products extends Component {
         const formValues = getValuesFromForm();
         let data = [];
 
-        if (localStorage.getItem('products') === null) {
+        if (sessionStorage.getItem('products') === null) {
             data[0] = formValues;
-            localStorage.setItem('products', JSON.stringify(data));
+            sessionStorage.setItem('products', JSON.stringify(data));
         } else {
-            data = JSON.parse(localStorage.getItem('products'));
+            data = JSON.parse(sessionStorage.getItem('products'));
             data.push(formValues);
-            localStorage.setItem('products', JSON.stringify(data));
+            sessionStorage.setItem('products', JSON.stringify(data));
         }
 
         for (const key in this.state.form) {
@@ -132,7 +132,7 @@ class Products extends Component {
     }
 
     getData = () => {
-        return JSON.parse(localStorage.getItem('products'));
+        return JSON.parse(sessionStorage.getItem('products'));
     }
 
     getProducts = (type = false) => {
@@ -161,9 +161,9 @@ class Products extends Component {
 
     handleDelete = (e) => {
         const elementId = e.target.name;
-        let data = JSON.parse(localStorage.getItem('products'));
+        let data = JSON.parse(sessionStorage.getItem('products'));
         data.splice(elementId, 1);
-        localStorage.setItem('products', JSON.stringify(data));
+        sessionStorage.setItem('products', JSON.stringify(data));
         this.setState({products: data});
     }
 
@@ -180,41 +180,37 @@ class Products extends Component {
             <div className="products products__container">
                 <h2 className="products__headline products__headline--2">Produkt</h2>
                 <div className="form">
-                    <div className="form__box--row">
-                        <div className="form__box form__box--name">
-                            <label className="label label--name" htmlFor="name">Nazwa produktu:*</label>
-                            <input name="name" className="input input--name" type="text" onChange={this.handleChange}/>
-                            <p className="info info--name">Pole nie może być puste</p>
-                        </div>
-                        <div className="form__box form__box--count">
-                            <label className="label label--count" htmlFor="count">Ilość:*</label>
-                            <input name="count" className="input input--count" type="number" min="1" defaultValue="1"
-                                   onChange={this.handleChange}/>
-                        </div>
+                    <div className="form__box form__box--name">
+                        <label className="label label--name" htmlFor="name">Nazwa produktu:*</label>
+                        <input name="name" className="input input--name" type="text" onChange={this.handleChange}/>
+                        <p className="info info--name">Pole nie może być puste</p>
                     </div>
-                    <div className="form__box--row">
-                        <div className="form__box form__box--netto">
-                            <label className="label label--netto" htmlFor="netto">Kwota netto:*</label>
-                            <input name="netto" className="input input--netto" type="number" min="0" defaultValue="0"
-                                   onChange={this.handleChange}/>
-                            <p className="info info--netto">Pole nie może być puste</p>
-                        </div>
-                        <div className="form__box form__box--vat">
-                            <label className="label label--vat" htmlFor="vat">Stawka VAT:*</label>
-                            <select className="input input--vat" name="vat" id="vat" onChange={this.handleChange}>
-                                <option value="23">23%</option>
-                                <option value="19">19%</option>
-                                <option value="10">10%</option>
-                                <option value="5">5%</option>
-                                <option value="0">0%</option>
-                            </select>
-                        </div>
-                        <div className="form__box form__box--brutto">
-                            <label className="label label--brutto" htmlFor="brutto">Kwota brutto:*</label>
-                            <input name="brutto" className="input input--brutto" type="number" min="0"
-                                   onChange={this.handleChange} disabled/>
-                            <p className="info info--brutto">Pole nie może być puste</p>
-                        </div>
+                    <div className="form__box form__box--count">
+                        <label className="label label--count" htmlFor="count">Ilość:*</label>
+                        <input name="count" className="input input--count" type="number" min="1" defaultValue="1"
+                               onChange={this.handleChange}/>
+                    </div>
+                    <div className="form__box form__box--netto">
+                        <label className="label label--netto" htmlFor="netto">Kwota netto:*</label>
+                        <input name="netto" className="input input--netto" type="number" min="0" defaultValue="0"
+                               onChange={this.handleChange}/>
+                        <p className="info info--netto">Pole nie może być puste</p>
+                    </div>
+                    <div className="form__box form__box--vat">
+                        <label className="label label--vat" htmlFor="vat">Stawka VAT:*</label>
+                        <select className="input input--vat" name="vat" id="vat" onChange={this.handleChange}>
+                            <option value="23">23%</option>
+                            <option value="19">19%</option>
+                            <option value="10">10%</option>
+                            <option value="5">5%</option>
+                            <option value="0">0%</option>
+                        </select>
+                    </div>
+                    <div className="form__box form__box--brutto">
+                        <label className="label label--brutto" htmlFor="brutto">Kwota brutto:*</label>
+                        <input name="brutto" className="input input--brutto" type="number" min="0"
+                               onChange={this.handleChange} disabled/>
+                        <p className="info info--brutto">Pole nie może być puste</p>
                     </div>
                     <div className="form__box form__box--submit">
                         <input className="input input--submit" type="submit" value="Dodaj produkt"
