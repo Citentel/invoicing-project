@@ -4,6 +4,7 @@ import './static/scss/app.css';
 import Select from "./components/Select";
 import AddSelect from "./components/AddSelect";
 import Products from "./components/Products";
+import Info from "./components/Info";
 
 class App extends Component {
     render = () => {
@@ -20,6 +21,7 @@ class App extends Component {
                                     <Select type="contractor"/>
                                     <Select type="trader"/>
                                     <Products/>
+                                    <Info/>
                                 </div>
                             </Route>
                             <Route exact path="/dodaj_kontrahenta">
