@@ -17,10 +17,6 @@ class Info extends Component {
             },
             info: {},
         }
-
-        if (sessionStorage.getItem('info') === null) {
-            this.setData();
-        }
     }
 
     handleChange = (e) => {
