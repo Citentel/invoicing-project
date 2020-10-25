@@ -24,6 +24,7 @@ class AddSelect extends Component {
         type: this.texts[this.props.type],
         form: {
             nip: null,
+            accountNum: null,
             name: null,
             address: null,
             zipcode: null,
@@ -73,7 +74,7 @@ class AddSelect extends Component {
     }
 
     isValid = () => {
-        let counter = 6;
+        let counter = 7;
         for (const key in this.state.form) {
             const input = document.querySelector(`.input--${key}`);
             const inputName = input.name;
@@ -199,6 +200,11 @@ class AddSelect extends Component {
                         <label className="label label--nip" htmlFor="nip">NIP:*</label>
                         <input name="nip" className="input input--nip" type="text" onChange={this.handleChange}/>
                         <p className="info info--nip">Pole nie może być puste</p>
+                    </div>
+                    <div className="form__box form__box--accountNum">
+                        <label className="label label--accountNum" htmlFor="accountNum">Numer konta bankowego:*</label>
+                        <input name="accountNum" className="input input--accountNum" type="text" onChange={this.handleChange}/>
+                        <p className="info info--accountNum">Pole nie może być puste</p>
                     </div>
                     <div className="form__box form__box--name">
                         <label className="label label--name" htmlFor="name">Nazwa:*</label>
