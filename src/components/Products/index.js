@@ -182,19 +182,19 @@ class Products extends Component {
                 <div className="form">
                     <div className="form__box--row">
                         <div className="form__box form__box--name">
-                            <label className="label label--name" htmlFor="nip">Nazwa produktu:*</label>
+                            <label className="label label--name" htmlFor="name">Nazwa produktu:*</label>
                             <input name="name" className="input input--name" type="text" onChange={this.handleChange}/>
                             <p className="info info--name">Pole nie może być puste</p>
                         </div>
                         <div className="form__box form__box--count">
-                            <label className="label label--count" htmlFor="nip">Ilość:*</label>
+                            <label className="label label--count" htmlFor="count">Ilość:*</label>
                             <input name="count" className="input input--count" type="number" min="1" defaultValue="1"
                                    onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="form__box--row">
                         <div className="form__box form__box--netto">
-                            <label className="label label--netto" htmlFor="nip">Kwota netto:*</label>
+                            <label className="label label--netto" htmlFor="netto">Kwota netto:*</label>
                             <input name="netto" className="input input--netto" type="number" min="0" defaultValue="0"
                                    onChange={this.handleChange}/>
                             <p className="info info--netto">Pole nie może być puste</p>
@@ -210,7 +210,7 @@ class Products extends Component {
                             </select>
                         </div>
                         <div className="form__box form__box--brutto">
-                            <label className="label label--brutto" htmlFor="nip">Kwota brutto:*</label>
+                            <label className="label label--brutto" htmlFor="brutto">Kwota brutto:*</label>
                             <input name="brutto" className="input input--brutto" type="number" min="0"
                                    onChange={this.handleChange} disabled/>
                             <p className="info info--brutto">Pole nie może być puste</p>
