@@ -25,9 +25,7 @@ class App extends Component {
                             <Route exact path="/" >
                                 <div>
                                     <p className="container__restart" onClick={this.restart}>Restart App</p>
-                                    <h1 className="container__headline container__headline--1">
-                                        Wystaw dokument
-                                    </h1>
+                                    <h1 className="headline headline--1">Wystaw dokument</h1>
                                     <Select type="contractor"/>
                                     <Select type="trader"/>
                                     <Products/>
@@ -36,15 +34,11 @@ class App extends Component {
                                 </div>
                             </Route>
                             <Route exact path="/dodaj_kontrahenta">
-                                <h1 className="container__headline container__headline--1">
-                                    Dodaj kontrahenta
-                                </h1>
+                                <h1 className="headline headline--1">Dodaj kontrahenta</h1>
                                 <AddSelect type="contractor"/>
                             </Route>
                             <Route exact path="/dodaj_sprzedawce">
-                                <h1 className="container__headline container__headline--1">
-                                    Dodaj sprzedawce
-                                </h1>
+                                <h1 className="headline headline--1">Dodaj sprzedawce</h1>
                                 <AddSelect type="trader"/>
                             </Route>
                             <Route exact path="/wystaw_dokument">

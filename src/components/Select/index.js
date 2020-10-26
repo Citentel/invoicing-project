@@ -75,9 +75,13 @@ class Select extends Component {
         } else if (this.state.data === null) {
             return (
                 <div className="select select__container">
-                    <h2 className="select__headline select__headline--2">{this.state.type.headline}</h2>
-                    <input className="input input--submit" type="submit" value={`Dodaj ${this.state.type.submit}`}
-                           onClick={this.handleRedirect}/>
+                    <h2 className="headline headline--2">{this.state.type.headline}</h2>
+                    <div className="form">
+                        <div className="form__box">
+                            <input className="input input--submit" type="submit" value={`Dodaj ${this.state.type.submit}`}
+                                   onClick={this.handleRedirect}/>
+                        </div>
+                    </div>
                     <p>{`Brak ${this.state.type.paragraf}`}</p>
                 </div>
             );
@@ -85,16 +89,20 @@ class Select extends Component {
             const options = this.getOptions();
             return (
                 <div className="select select__container">
-                    <h2 className="select__headline select__headline--2">{this.state.type.headline}</h2>
-                    <div className="select__form">
-                        <label className="label label--select" htmlFor="select">{`Wybierz ${this.state.type.submit}`}</label>
-                        <select className="input input--select" name="select" id="select" onChange={this.handleChange}>
-                            <option value="null">{`Wybierz ${this.state.type.submit}`}</option>
-                            {options}
-                        </select>
+                    <h2 className="headline headline--2">{this.state.type.headline}</h2>
+                    <div className="form">
+                        <div className="form__box">
+                            <label className="label label--select" htmlFor="select">{`Wybierz ${this.state.type.submit}`}</label>
+                            <select className="input input--select" name="select" id="select" onChange={this.handleChange}>
+                                <option value="null">{`Wybierz ${this.state.type.submit}`}</option>
+                                {options}
+                            </select>
+                        </div>
+                        <div className="form__box">
+                            <input className="input input--submit" type="submit" value={`Dodaj ${this.state.type.submit}`}
+                                   onClick={this.handleRedirect}/>
+                        </div>
                     </div>
-                    <input className="input input--submit" type="submit" value={`Dodaj ${this.state.type.submit}`}
-                           onClick={this.handleRedirect}/>
                 </div>
             );
         }

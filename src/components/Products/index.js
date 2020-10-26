@@ -178,7 +178,7 @@ class Products extends Component {
         }
         return (
             <div className="products products__container">
-                <h2 className="products__headline products__headline--2">Produkt</h2>
+                <h2 className="headline headline--2">Produkt</h2>
                 <div className="form">
                     <div className="form__box form__box--name">
                         <label className="label label--name" htmlFor="name">Nazwa produktu:*</label>
