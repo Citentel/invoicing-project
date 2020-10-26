@@ -25,4 +25,5 @@ yarn-error.log*
 #phpstorm
 .idea
 
-.css.map
+#css map
+*.map
