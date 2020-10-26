@@ -19,12 +19,12 @@ class App extends Component {
     render = () => {
         return (
             <div className="app">
-                <div className="container">
+                <div className="content">
                     <Router>
                         <Switch>
                             <Route exact path="/" >
                                 <div>
-                                    <p className="container__restart" onClick={this.restart}>Restart App</p>
+                                    <p className="content__restart" onClick={this.restart}>Restart App</p>
                                     <h1 className="headline headline--1">Wystaw dokument</h1>
                                     <Select type="contractor"/>
                                     <Select type="trader"/>

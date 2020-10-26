@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
 
-  .container {
+  .content {
     @include rem(max-width, 700);
     width: 100%;
     @include rem(padding, 0, 20);

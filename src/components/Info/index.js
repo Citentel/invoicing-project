@@ -90,7 +90,7 @@ class Info extends Component {
     render = () => {
         const actualDate = moment().format('YYYY-MM-DD');
         return (
-            <div className="info info__container">
+            <div className="info container">
                 <h2 className="headline headline--2">Dodatkowe informacje</h2>
                 <div className="form">
                     <div className="form__box form__box--dateCreate">

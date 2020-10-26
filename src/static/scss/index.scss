@@ -113,3 +113,13 @@ body {
     }
   }
 }
+
+.container {
+  @include rem(border-width, 4);
+  border-style: solid;
+  border-color: $color__200;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  @include rem(padding-bottom, 30);
+}
