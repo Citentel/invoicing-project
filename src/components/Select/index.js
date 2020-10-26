@@ -74,7 +74,7 @@ class Select extends Component {
             );
         } else if (this.state.data === null) {
             return (
-                <div className="select select__container">
+                <div className="select container">
                     <h2 className="headline headline--2">{this.state.type.headline}</h2>
                     <div className="form">
                         <div className="form__box">
@@ -88,7 +88,7 @@ class Select extends Component {
         } else {
             const options = this.getOptions();
             return (
-                <div className="select select__container">
+                <div className="select container">
                     <h2 className="headline headline--2">{this.state.type.headline}</h2>
                     <div className="form">
                         <div className="form__box">
