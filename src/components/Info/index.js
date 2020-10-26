@@ -91,7 +91,7 @@ class Info extends Component {
         const actualDate = moment().format('YYYY-MM-DD');
         return (
             <div className="info info__container">
-                <h2 className="info__headline info__headline--2">Dodatkowe informacje</h2>
+                <h2 className="headline headline--2">Dodatkowe informacje</h2>
                 <div className="form">
                     <div className="form__box form__box--dateCreate">
                         <label className="label label--dateCreate" htmlFor="dateCreate">Data wystawienia:*</label>

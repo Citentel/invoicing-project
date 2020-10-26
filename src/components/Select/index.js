@@ -85,7 +85,7 @@ class Select extends Component {
             const options = this.getOptions();
             return (
                 <div className="select select__container">
-                    <h2 className="select__headline select__headline--2">{this.state.type.headline}</h2>
+                    <h2 className="headline headline--2">{this.state.type.headline}</h2>
                     <div className="select__form">
                         <label className="label label--select" htmlFor="select">{`Wybierz ${this.state.type.submit}`}</label>
                         <select className="input input--select" name="select" id="select" onChange={this.handleChange}>

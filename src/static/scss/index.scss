@@ -14,3 +14,19 @@ body {
   @include rem(font-size, $base__font__size);
   @include rem(line-height, $base__line__height);
 }
+
+.headline {
+  color: $color__900;
+
+  &--1 {
+    @include rem(font-size, $base__font__size*2);
+    @include rem(line-height, $base__line__height*2);
+    @include rem(margin, 30, 0);
+  }
+
+  &--2 {
+    @include rem(font-size, $base__font__size*1.5);
+    @include rem(line-height, $base__line__height*1.5);
+    @include rem(margin, 20, 0);
+  }
+}

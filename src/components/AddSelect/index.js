@@ -194,7 +194,7 @@ class AddSelect extends Component {
         }
         return (
             <div className="addselect">
-                <h2 className="addselect__headline addselect__headline--2">{`Dane ${this.state.type.headline}`}</h2>
+                <h2 className="headline headline--2">{`Dane ${this.state.type.headline}`}</h2>
                 <div className="form">
                     <div className="form__box form__box--nip">
                         <label className="label label--nip" htmlFor="nip">NIP:*</label>
