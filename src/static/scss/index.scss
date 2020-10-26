@@ -18,15 +18,98 @@ body {
 .headline {
   color: $color__900;
 
-  &--1 {
+  &.headline--1 {
     @include rem(font-size, $base__font__size*2);
     @include rem(line-height, $base__line__height*2);
     @include rem(margin, 30, 0);
   }
 
-  &--2 {
+  &.headline--2 {
     @include rem(font-size, $base__font__size*1.5);
     @include rem(line-height, $base__line__height*1.5);
     @include rem(margin, 20, 0);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  .form__box--row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form__box {
+    @include rem(margin-bottom, 20);
+
+    &:last-child {
+      margin: 0;
+    }
+
+    .label {
+      display: block;
+      @include rem(margin-bottom, 5);
+    }
+
+    .input {
+      display: block;
+      width: 100%;
+      font-size: inherit;
+      line-height: inherit;
+      @include rem(padding, 15, 10);
+      @include rem(border-radius, 5);
+      outline: none;
+      @include rem(border-width, 2);
+      border-style: solid;
+      border-color: $color__100;
+      transition: $base__transition;
+
+      &:active,
+      &:focus {
+        border-color: $color__700;
+      }
+
+      &.input--timePay {
+        background-color: $color__white;
+      }
+
+      &.input--methodPay {
+        background-color: $color__white;
+      }
+
+      &.input--invalid {
+        &:active,
+        &:focus {
+          border-color: $color__red;
+        }
+
+        border-color: $color__red;
+      }
+
+      &.input--valid {
+        border-color: $color__green;
+      }
+
+      &.input--submit {
+        cursor: pointer;
+
+        &:hover {
+          border-color: $color__700;
+          background-color: $color__300;
+        }
+      }
+    }
+
+    .info {
+      @include rem(margin, 5, 0, 0, 0);
+      @include rem(font-size, 14);
+      display: none;
+
+      &.info--error {
+        display: block;
+        color: $color__red;
+      }
+    }
   }
 }

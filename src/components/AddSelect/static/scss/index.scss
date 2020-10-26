@@ -2,89 +2,26 @@
 
 .addselect {
   .form {
-    display: flex;
-    flex-direction: column;
-
-    &__box {
-      @include rem(margin-bottom, 20);
-
-      &--row {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      &--zipcode,
-      &--city {
+    .form__box {
+      &.form__box--zipcode,
+      &.form__box--city {
         @include rem(max-width, 375px);
         width: 100%;
       }
 
-      &--zipcode {
+      &.form__box--zipcode {
         @include rem(margin-right, 15);
       }
 
-      &--city {
+      &.form__box--city {
         @include rem(margin-left, 15);
       }
 
-      .label {
-        display: block;
-        @include rem(margin-bottom, 5);
-      }
-
       .input {
-        display: block;
-        width: 100%;
-        font-size: inherit;
-        line-height: inherit;
-        @include rem(padding, 15, 10);
-        @include rem(border-radius, 5);
-        outline: none;
-        @include rem(border-width, 2);
-        border-style: solid;
-        border-color: $color__100;
-        transition: $base__transition;
-
-        &:active,
-        &:focus {
-          border-color: $color__700;
-        }
-
-        &--invalid {
-          &:active,
-          &:focus {
-            border-color: $color__red;
-          }
-
-          border-color: $color__red;
-        }
-
-        &--valid {
-          border-color: $color__green;
-        }
-
-        &--submit {
-          cursor: pointer;
-
+        &.input--submit {
           &:first-child {
             @include rem(margin-bottom, 15);
           }
-
-          &:hover {
-            border-color: $color__700;
-            background-color: $color__300;
-          }
-        }
-      }
-
-      .info {
-        @include rem(margin, 5, 0, 0, 0);
-        @include rem(font-size, 14);
-        display: none;
-
-        &--error {
-          display: block;
-          color: $color__red;
         }
       }
     }

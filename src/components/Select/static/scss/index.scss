@@ -11,35 +11,13 @@
     @include rem(padding-bottom, 30);
   }
 
-  .input {
-    display: block;
-    width: 100%;
-    font-size: inherit;
-    line-height: inherit;
-    @include rem(padding, 15, 10);
-    @include rem(border-radius, 5);
-    outline: none;
-    @include rem(border-width, 2);
-    border-style: solid;
-    border-color: $color__100;
-    transition: $base__transition;
-    &--select {
-      background-color: $color__white;
-    }
-    &--submit {
-      cursor: pointer;
-      &:hover {
-        border-color: $color__700;
-        background-color: $color__300;
+  .form {
+    .form__box {
+      .input {
+        &.input--select {
+          background-color: $color__white;
+        }
       }
-    }
-  }
-
-  .select__form {
-    @include rem(margin, 20, 0);
-    .label {
-      display: block;
-      @include rem(margin-bottom, 5);
     }
   }
 }
