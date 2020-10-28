@@ -5,12 +5,22 @@
     @include rem(font-size, $base__font__size*2);
     @include rem(line-height, $base__line__height*2);
     @include rem(margin, 30, 0);
+    @media only screen and (max-width: 768px) {
+      @include rem(font-size, $base__font__size*1.7);
+      @include rem(line-height, $base__line__height*1.7);
+      @include rem(margin, 20, 0);
+    }
   }
 
   &.headline--2 {
     @include rem(font-size, $base__font__size*1.5);
     @include rem(line-height, $base__line__height*1.5);
     @include rem(margin, 20, 0);
+    @media only screen and (max-width: 768px) {
+      @include rem(font-size, $base__font__size*1.2);
+      @include rem(line-height, $base__line__height*1.2);
+      @include rem(margin, 20, 0);
+    }
   }
 }
 
@@ -92,6 +102,14 @@
       &.info--error {
         display: block;
         color: $color__red;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      @include rem(margin-bottom, 10);
+
+      .input {
+        @include rem(padding, 10, 5);
       }
     }
   }
