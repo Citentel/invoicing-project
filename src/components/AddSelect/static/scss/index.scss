@@ -1,6 +1,7 @@
 @import "../../../../static/scss/config";
 
 .addselect {
+  @include rem(margin-bottom, 20);
   .form {
     .form__box {
       &.form__box--zipcode,
